@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 120,
   },
   selectEmpty: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(5),
   },
 }));
 
@@ -81,7 +81,7 @@ export default function Home() {
             />
 
             <FormControl className={classes.formControl}>
-                <InputLabel id="demo-simple-select-helper-label">Select Category</InputLabel>
+                <InputLabel shrink id="demo-simple-select-helper-label">Select Category</InputLabel>
                 <Select
                     labelId="demo-simple-select-helper-label"
                     id="demo-simple-select-helper"

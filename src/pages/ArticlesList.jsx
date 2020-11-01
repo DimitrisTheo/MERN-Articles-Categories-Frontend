@@ -24,15 +24,15 @@ class UpdateArticle extends Component {
 }
 
 class DeleteArticle extends Component {
-    delete = event => {
+    delete = async (event) => {
         event.preventDefault()
 
         if (
             window.confirm(
-                `Do tou want to delete the movie ${this.props.id} permanently?`,
+                `Do tou want to delete the article '${this.props.title}' permanently?`,
             )
         ) {
-            api.deleteArticleById_or_Title(this.props.param)
+            await api.deleteArticleById_or_Title(this.props.id)
             window.location.reload()
         }
     }
@@ -126,7 +126,7 @@ class ArticlesList extends Component {
                                 case 'delete':
                                     return (
                                         <TableCell key={column.id}>
-                                            <DeleteArticle param={row._id} />
+                                            <DeleteArticle id={row._id} title={row.title}  />
                                         </TableCell>
                                     );
                                 case 'category':

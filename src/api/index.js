@@ -1,15 +1,15 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'http://localhost:3000/',
+    baseURL: 'http://localhost:3000',
 })
 
 // Routes for Articles information
 export const getAllArticles = (query) => api.get(`/articles${query}`)
-export const getArticleById_or_Title = param => api.get(`/article/${param}`)
-export const createArticle = payload => api.post(`/article`, payload)
-export const updateArticleById_or_Title = (param, payload) => api.post(`/article/${param}`, payload)
-export const deleteArticleById_or_Title = param => api.delete(`/article/${param}`)
+export const getArticleById_or_Title = param => api.get(`/articles/${param}`)
+export const createArticle = payload => api.post(`/articles`, payload)
+export const updateArticleById_or_Title = (param, payload) => api.post(`/articles/${param}`, payload)
+export const deleteArticleById_or_Title = param => api.delete(`/articles/${param}`)
 
 // Routes for Categories information
 export const getAllCategories = () => api.get(`/categories`)
